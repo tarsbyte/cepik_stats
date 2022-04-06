@@ -53,6 +53,7 @@ for key, val in dict.items():
 #https://stackoverflow.com/questions/6130768/return-a-default-value-if-a-dictionary-key-is-not-available
 #https://stackoverflow.com/questions/9257094/how-to-change-a-string-into-uppercase
 #https://www.section.io/engineering-education/integrating-external-apis-with-flask/
+#Project prepared for Distributed Systems with dr Bartosz Kwolek
 def check_correct_date(date_1, date_2):
 
     date_1 = date_1.split('-')
