@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Samochody</title>
+  </head>
+  <body bgcolor=#e4ea93>
+  <p>Enter brand, mark and dates in format (yyyy-mm-dd)</p>
+      <form action="model_info" method ="post">
+
+        {% for msg in get_flashed_messages()%}
+        <p> {{msg}} </p>
+        {% endfor %}
+
+        <input type="text" name="brand_input">
+        <input type="text" name="model_input">
+        <input type="text" name="dat1_input">
+        <input type="text" name="dat2_input">
+        <br>
+        <input type="submit" value = "SEND" id = "send_brand">
+      </form>
+
+<table bgcolor = #e4c793>
+    <tr>
+      <th></th>
+      <th>Województwo</th>
+      <th>Liczba samochodów</th>
+    </tr>
+    <tr>
+      <th>Największa ilość</th>
+      <th>{{max_voiv}}</th>
+      <th>{{max_val}}</th>
+    </tr>
+    <tr>
+      <td>Najmmniejsza ilość</td>
+      <td>{{ min_voiv }}</td>
+      <td>{{ min_val }}</td>
+    </tr>
+    <tr>
+      <td>Średnia</td>
+      <td> </td>
+      <td>{{ avg }}</td>
+    </tr>
+
+     <tr>
+      <td>Suma</td>
+      <td> </td>
+      <td>{{ sum }}</td>
+     </tr>
+
+  </table>
+
+    <table bgcolor = #e4c793>
+
+  <tr>
+    <th> </th>
+    <th>MAZOW.</th>
+    <th>DOLNOŚ.</th>
+      <th>ŚLĄSK.</th>
+      <th>PODKARP.</th>
+      <th>MAŁOPOL.</th>
+      <th>ŚWIĘTOK.</th>
+      <th>POMORS.</th>
+      <th>ZACH-POM.</th>
+      <th>PODLAS.</th>
+      <th>ŁÓDZKIE</th>
+      <th>WIELKOPOL.</th>
+      <th>LUBUS.</th>
+      <th>LUBEL.</th>
+      <th>OPOL.</th>
+      <th>WARMIŃ-MAZ.</th>
+      <th>KUJAW-POM.</th>
+  </tr>
+  <tr>
+    <td>Ilość zarejestrowanych aut</td>
+      <td>{{ maz }}</td>
+    <td>{{ dol }}</td>
+    <td>{{ sla }}</td>
+      <td>{{ pod }}</td>
+    <td>{{ mal }}</td>
+      <td>{{ swi }}</td>
+    <td>{{ pom }}</td>
+      <td>{{ zac }}</td>
+    <td>{{ pol }}</td>
+      <td>{{ lod }}</td>
+      <td>{{ wie }}</td>
+    <td>{{ lub }}</td>
+      <td>{{ lul }}</td>
+    <td>{{ opo }}</td>
+      <td>{{ war }}</td>
+      <td>{{ kuj }}</td>
+  </tr>
+
+</table>
+
+<p>Enter 1 region, 2 region and dates in format (yyyy-mm-dd)</p>
+<form action="brands_info" method="post">
+        <br>
+        <input type="text" name="voiv_1">
+        <input type="text" name="voiv_2">
+        <input type="text" name="date1_input">
+        <input type="text" name="date2_input">
+        <br>
+        <input type="submit" value="submit" id = "submit">
+    </form>
+<table bgcolor = #e4c793>
+
+  <tr>
+    <th> </th>
+    <th>AUDI</th>
+    <th>TOYOTA</th>
+      <th>VOLKSWAGEN</th>
+      <th>HYUNDAI</th>
+      <th>MERCEDES</th>
+      <th>VOLVO</th>
+      <th>RENAULT</th>
+      <th>BMW</th>
+      <th>OPEL</th>
+      <th>CITROEN</th>
+      <th>HONDA</th>
+      <th>SKODA</th>
+      <th>FORD</th>
+      <th>KIA</th>
+      <th>FIAT</th>
+      <th>NISSAN</th>
+      <th>SEAT</th>
+      <th>INNE MARKI</th>
+  </tr>
+  <tr>
+    <td>Ilość zarejestrowanych aut dla województwa 1</td>
+      <td>{{ audi }}</td>
+    <td>{{ toyota }}</td>
+    <td>{{ volk }}</td>
+      <td>{{ hyu }}</td>
+    <td>{{ merc }}</td>
+      <td>{{ volv }}</td>
+    <td>{{ ren }}</td>
+      <td>{{ bmw }}</td>
+    <td>{{ opel }}</td>
+      <td>{{ citr }}</td>
+      <td>{{ hond }}</td>
+    <td>{{ sko }}</td>
+      <td>{{ ford }}</td>
+    <td>{{ kia }}</td>
+      <td>{{ fiat }}</td>
+      <td>{{ niss }}</td>
+      <td>{{ sea }}</td>
+    <td>{{ inne }}</td>
+  </tr>
+
+  <tr>
+    <td>Ilość zarejestrowanych aut dla województwa 2</td>
+      <td>{{ audi2 }}</td>
+    <td>{{ toyota2 }}</td>
+    <td>{{ volk2 }}</td>
+      <td>{{ hyu2 }}</td>
+    <td>{{ merc2 }}</td>
+      <td>{{ volv2 }}</td>
+    <td>{{ ren2 }}</td>
+      <td>{{ bmw2 }}</td>
+    <td>{{ opel2 }}</td>
+      <td>{{ citr2 }}</td>
+      <td>{{ hond2 }}</td>
+    <td>{{ sko2 }}</td>
+      <td>{{ ford2 }}</td>
+    <td>{{ kia2 }}</td>
+      <td>{{ fiat2 }}</td>
+      <td>{{ niss2 }}</td>
+      <td>{{ sea2 }}</td>
+    <td>{{ inne2 }}</td>
+  </tr>
+
+</table>
+
+<table bgcolor = #e4c793>
+  <caption>Ekstrema dla 1)</caption>
+  <tr>
+    <th> </th>
+    <th>Marka</th>
+    <th>Liczba samochodów</th>
+  </tr>
+  <tr>
+    <td>Największa ilość</td>
+    <td>{{ most_br }}</td>
+    <td>{{ most_val }}</td>
+  </tr>
+  <tr>
+    <td>Najmmniejsza ilość</td>
+    <td>{{ least_br }}</td>
+    <td>{{ least_val }}</td>
+  </tr>
+
+</table>
+
+      {{other_brands}}
+
+  <table bgcolor = #e4c793>
+  <caption>Ekstrema dla 2)</caption>
+  <tr>
+    <th> </th>
+    <th>Marka</th>
+    <th>Liczba samochodów</th>
+  </tr>
+  <tr>
+    <td>Największa ilość</td>
+    <td>{{ most_br2 }}</td>
+    <td>{{ most_val2 }}</td>
+  </tr>
+  <tr>
+    <td>Najmmniejsza ilość</td>
+    <td>{{ least_br2 }}</td>
+    <td>{{ least_val2 }}</td>
+  </tr>
+</table>
+
+  {{other_brands2}}
+
+  </body>
+</html>
